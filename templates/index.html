@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<head>
+
+
+</head>
+<div class="content">
+    <h1 style="text-align: center">Titanic Survival Prediction </h1>
+    <img src='https://www.usnews.com/dims4/USNEWS/4f3cd50/2147483647/thumbnail/970x647/quality/85/?url=http%3A%2F%2Fmedia.beam.usnews.com%2F0e%2Fe187dd2f8f1fe5be9058fa8eef419e%2F7018FE_DA_080929titanic.jpg' style="max-width:none;max-height:none;width:100%;height:100%;margin-left:50%;-webkit-transform:translateX(-50%);-moz-transform:translateX(-50%);-ms-transform:translateX(-50%);-o-transform:translateX(-50%);transform:translateX(-50%)">
+
+</div>
+
+
+    <div class="form" typeof="table" >
+
+        <form action="/predict" method="POST">
+            <label for="Pclass">Passenger Class</label>
+            <select name="Pclass" id="Pclass">
+            <option value="1">First Class</option>
+            <option value="2">Second Class</option>
+            <option value="3">Third Class</option>required>
+            </select>
+
+            <label for="Sex">Gender</label>
+            <select name="Sex" id="Sex">
+            <option value="1">Male</option>
+            <option value="0">Female</option>required>
+            </select>
+            <input type="number" name="Age" id="Age" placeholder="Age"  step="any" required>
+            <label for="SibSp">Siblings aboard</label>
+            <select name="SibSp" id="SibSp">
+            <option value="1">Yes</option>
+            <option value="0">No</option>required>
+            </select>
+            <input type="number" name="Parch" id="Parch" placeholder="Parch"  step="any" min="0" max="6"  required>
+            <input type="number" name="Fare" id="Fare" placeholder="Fare"  step="any" required>
+            <input type="submit" value="Predict">
+
+        </form>
+
+    </div>
+
+
+
+</div>
+{% endblock %}
